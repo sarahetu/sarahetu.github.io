@@ -1,5 +1,5 @@
 {
-	"name": "e-learning",
+	"name": "Sarah",
 	"main": "server.js",
 	"dependencies": {
 		"cookie": "~0.3.1",
