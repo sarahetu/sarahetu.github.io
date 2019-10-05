@@ -1,5 +1,5 @@
 {
-	"name": "Sarah",
+	"name": "my-ramblings",
 	"main": "server.js",
 	"dependencies": {
 		"cookie": "~0.3.1",

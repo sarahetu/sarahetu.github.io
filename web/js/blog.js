@@ -1,88 +1,91 @@
-(function Blog(){
+(function Blog(global){
 	"use strict";
 
 	var offlineIcon;
-	// detecte the users connectivity
-	var isOnline = ("onLine" in navigator) ? navigator.onLine : true;
+	var isOnline = ("onLine" in navigator) && navigator.onLine;
 	var isLoggedIn = /isLoggedIn=1/.test(document.cookie.toString() || "");
-	//to detecte if we are using serviceWorker
 	var usingSW = ("serviceWorker" in navigator);
 	var swRegistration;
 	var svcworker;
 
+	if (usingSW) {
+		initServiceWorker().catch(console.error);
+	}
+
+	global.isBlogOnline = isBlogOnline;
 
 	document.addEventListener("DOMContentLoaded",ready,false);
 
-	initServiceWorker().catch(console.error);
 
 	// **********************************
 
 	function ready() {
 		offlineIcon = document.getElementById("connectivity-status");
 
-		if (!isOnline){
+		if (!isOnline) {
 			offlineIcon.classList.remove("hidden");
 		}
 
 		window.addEventListener("online",function online(){
 			offlineIcon.classList.add("hidden");
 			isOnline = true;
-		});
-
+			sendStatusUpdate();
+		},false);
 		window.addEventListener("offline",function offline(){
 			offlineIcon.classList.remove("hidden");
 			isOnline = false;
 			sendStatusUpdate();
-		});
+		},false);
 	}
 
-	async function initServiceWorker(){
-		// assign registration
+	function isBlogOnline() {
+		return isOnline;
+	}
+
+	async function initServiceWorker() {
 		swRegistration = await navigator.serviceWorker.register("/sw.js",{
-			updateViaCache: "none"
+			updateViaCache: "none",
 		});
 
-		//communicate with the service workers
-		// 3 stages of the service worker
 		svcworker = swRegistration.installing || swRegistration.waiting || swRegistration.active;
 		sendStatusUpdate(svcworker);
-		// listen to the event
-		// a new service worker has taken controll of the page
-		navigator.serviceWorker.addEventListener("controllerchange", function onController(){
-			//if that append, we have a new service worker
+
+		// listen for new service worker to take over
+		navigator.serviceWorker.addEventListener("controllerchange",async function onController(){
 			svcworker = navigator.serviceWorker.controller;
 			sendStatusUpdate(svcworker);
 		});
 
-		navigator.serviceWorker.addEventListener("message",onSWMessage);
+		navigator.serviceWorker.addEventListener("message",onSWMessage,false);
 	}
 
-	function onSWMessage(evt){
-		// destruct the event object that is coming in
+	function onSWMessage(evt) {
 		var { data } = evt;
-		// send from the sw to the page and ask update about the page
-		if (data.requestStatusUpdate){
-			console.log("Received status update request from service");
+		if (data.statusUpdateRequest) {
+			console.log("Status update requested from service worker, responding...");
 			sendStatusUpdate(evt.ports && evt.ports[0]);
-
+		}
+		else if (data == "force-logout") {
+			document.cookie = "isLoggedIn=";
+			isLoggedIn = false;
+			sendStatusUpdate();
 		}
 	}
 
-	function sendStatusUpdate(target){
-		sendSWMessage ({ statusUpdate: { isOnline, isLoggedIn }}, target);
+	function sendStatusUpdate(target) {
+		sendSWMessage({ statusUpdate: { isOnline, isLoggedIn } },target);
 	}
 
-	// send a message to our service worker from the page
-	function sendSWMessage(msg,target){
-		if (target){
+	function sendSWMessage(msg,target) {
+		if (target) {
 			target.postMessage(msg);
 		}
-		else if (svcworker){
+		else if (svcworker) {
 			svcworker.postMessage(msg);
 		}
-		else{
+		else if (navigator.serviceWorker.controller) {
 			navigator.serviceWorker.controller.postMessage(msg);
 		}
 	}
 
-})();
+})(window);
