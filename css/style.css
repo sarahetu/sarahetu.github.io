@@ -114,24 +114,7 @@ a:hover {
   background: #ffffff;
   box-shadow: 8px 8px rgba(0, 0, 0, 0.5);
   border-left: 40px solid #eee;
-}
-
-.dessin {
-  padding: 20px 20px;
-}
-
-.dessin {
   padding: 40px 80px;
-}
-
-.dessin {
-  padding: 40px 80px;
-}
-
-
-.kiokDU {
-  justify-content: space-between;
-  align-items: flex-start;
 }
 
 
@@ -160,17 +143,7 @@ a:hover {
     opacity: 1;
   }
 }
-.bzDtW {
-  position: absolute;
-  top: 0px;
-  left: 50%;
-  margin-top: -60px;
-  margin-left: -60px;
-  opacity: 0;
-  animation: eMLfYp 400ms 700ms cubic-bezier(0.215, 0.61, 0.355, 1) 1;
-  animation-fill-mode: forwards;
-  z-index: 120;
-}
+
 .bzDtW span {
   display: none;
 }
@@ -244,18 +217,7 @@ a:hover {
     transform: rotateX(0deg);
   }
 }
-.huKWfn {
-  animation: jBdeIW 400ms 1000ms cubic-bezier(0.215, 0.61, 0.355, 1) 1;
-  animation-fill-mode: forwards;
-  position: relative;
-  background: #ffffff;
-  padding: 80px 40px 40px 40px;
-}
 
-
-.hPJIuQ {
-  font-size: 1.7em;
-}
 
 .hPJIuQ p {
   margin-bottom: 40px;
