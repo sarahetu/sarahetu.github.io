@@ -101,14 +101,9 @@ a:hover {
   width: 100%;
   z-index: 1;
 }
+
 .gMyTHp {
-  flex: 1;
-  align-items: center;
   position: relative;
-}
-
-
-.gMyTHp {
   padding: 80px 80px 80px 80px;
 }
 
