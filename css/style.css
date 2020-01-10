@@ -71,7 +71,7 @@ h6 {
   line-height: 1.3;
 }
 h2 {
-  font-size: 3em;
+  font-size: 5em;
 }
 
 p {
@@ -106,21 +106,12 @@ a:hover {
   align-items: center;
   position: relative;
 }
-@media screen and (max-width: 600px) {
-  .gMyTHp {
-    padding: 10px 10px 10px 10px;
-  }
+
+
+.gMyTHp {
+  padding: 80px 80px 80px 80px;
 }
-@media screen and (min-width: 601px) and (max-width: 1200px) {
-  .gMyTHp {
-    padding: 80px 80px 80px 80px;
-  }
-}
-@media screen and (min-width: 1201px) {
-  .gMyTHp {
-    padding: 80px 120px 80px 120px;
-  }
-}
+
 
 .dessin {
   position: relative;
@@ -129,27 +120,24 @@ a:hover {
   box-shadow: 8px 8px rgba(0, 0, 0, 0.5);
   border-left: 40px solid #eee;
 }
-@media screen and (max-width: 600px) {
-  .dessin {
-    padding: 20px 20px;
-  }
+
+.dessin {
+  padding: 20px 20px;
 }
-@media screen and (min-width: 601px) and (max-width: 1200px) {
-  .dessin {
-    padding: 40px 80px;
-  }
+
+.dessin {
+  padding: 40px 80px;
 }
-@media screen and (min-width: 1201px) {
-  .dessin {
-    padding: 40px 80px;
-  }
+
+.dessin {
+  padding: 40px 80px;
 }
+
 
 .kiokDU {
   justify-content: space-between;
   align-items: flex-start;
 }
-
 
 
 .evmVAZ:hover {
@@ -201,19 +189,19 @@ a:hover {
 
 }
 .jQxPsJ {
-
-
   display: flex;
   position: absolute;
   left: -60px;
   top: 35px;
   justify-content: center;
 }
+
 @media screen and (max-width: 600px) {
   .jQxPsJ {
     display: none;
   }
 }
+
 .hLVIgY {
   display: flex;
   align-items: center;
@@ -274,17 +262,17 @@ a:hover {
   background: #ffffff;
   box-shadow: 8px 8px rgba(0, 0, 0, 0.15);
 }
-@media screen and (max-width: 600px) {
+@media screen {
   .huKWfn {
     padding: 80px 20px 20px 20px;
   }
 }
-@media screen and (min-width: 601px) and (max-width: 1200px) {
+@media screen {
   .huKWfn {
     padding: 80px 40px 40px 40px;
   }
 }
-@media screen and (min-width: 1201px) {
+@media screen {
   .huKWfn {
     padding: 80px 80px;
   }
@@ -292,17 +280,17 @@ a:hover {
 .hPJIuQ {
   margin-bottom: 40px;
 }
-@media screen and (max-width: 600px) {
+@media screen {
   .hPJIuQ {
     font-size: 1em;
   }
 }
-@media screen and (min-width: 601px) and (max-width: 1200px) {
+@media screen {
   .hPJIuQ {
     font-size: 1.7em;
   }
 }
-@media screen and (min-width: 1201px) {
+@media screen {
   .hPJIuQ {
     font-size: 1.7em;
   }
@@ -321,7 +309,7 @@ a:hover {
   align-items: center;
   flex-wrap: wrap;
 }
-@media screen and (max-width: 600px) {
+@media screen {
   .align {
     padding: 0 20px;
   }
@@ -378,12 +366,12 @@ a:hover {
   animation: dxgQlt 100ms 1600ms cubic-bezier(0.215, 0.61, 0.355, 1) 1;
   animation-fill-mode: forwards;
 }
-@media screen and (max-width: 600px) {
+
+@media screen {
   .jcrkPC {
     display: none;
   }
 }
-
 
 .top {
   margin-top: 40px;
