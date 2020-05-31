@@ -70,8 +70,10 @@ p.desc{
   font-weight: 200;
   margin-bottom:40px;
 }
-.competences-space li {
+.competences-space ul {
   margin-bottom:40px;
+}
+.competences-space li {
   float:left;
   color: white;
   font-size:1rem;
