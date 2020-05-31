@@ -24,7 +24,7 @@ html,body {
 }
 .content {
   left:15%;
-  top:20%;
+  top:10%;
   width:70%;
   position:relative;
 }
@@ -37,14 +37,13 @@ h1.title {
 h2{
   float:left;
   color:white;
-  font-size: 2vw;
+  font-size: 2rem;
   font-weight:500;
 }
 h3{
   float:right;
   color:white;
-  font-size: 2vw;
-  display:inline;
+  font-size: 2rem;
   font-weight:500;
 }
 strong{
@@ -61,7 +60,7 @@ a:hover{
 }
 p.text{
   width:100%;
-  font-size:1.5vw;
+  font-size:2rem;
   color:rgba(255,255,255,1);
 }
 p.desc{
@@ -74,15 +73,14 @@ p.desc{
 }
 .competences-space {
   margin-bottom:40px;
-  color: rgba(255,255,255,0.8);
-  font-weight:100;
-  font-size:17px;
+  float:left;
+  color: white;
+  font-size:1rem;
 }
 .competences li {
   float:left;
-  color: rgba(255,255,255,0.8);
-  font-weight:100;
-  font-size:17px;
+  color: white;
+  font-size:1rem;
 }
   
 .contacts {
@@ -96,8 +94,8 @@ p.desc{
   list-style-type:none;
   float:left;
   color: rgba(255,255,255,0.8);
-  font-weight:100;
-  font-size:17px;
+  font-weight:1rem;
+  font-size:1.5rem;
 }
 .contact li a {
   text-decoration:none;
