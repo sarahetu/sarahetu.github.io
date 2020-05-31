@@ -64,14 +64,13 @@ p.text{
   color:rgba(255,255,255,1);
 }
 p.desc{
-  position:relative;
   width:100%;
-  font-size:4vw;
+  font-size:3rem;
   color:rgba(255,255,255,1);
   font-weight: 200;
   margin-bottom:40px;
 }
-.competences-space {
+.competences-space li {
   margin-bottom:40px;
   float:left;
   color: white;
