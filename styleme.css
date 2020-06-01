@@ -24,20 +24,20 @@ html,body {
 }
 .content {
   left:15%;
-  top:0%;
+  top:10%;
   width:70%;
   position:relative;
 }
 h1.title {
   color:#e1b382;
-  font-size: 4rem;
+  font-size: 3rem;
   display:inline;
   font-weight:800;
 }
 h2{
   float:left;
-  color:white;
-  font-size: 2rem;
+  color:#e1b382;
+  font-size: 1.5rem;
   font-weight:500;
 }
 h3.next{
